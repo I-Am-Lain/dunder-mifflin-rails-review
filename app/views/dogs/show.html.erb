@@ -1,0 +1,13 @@
+<h1>Meet <%=@dog.name%>!!</h1>
+
+<br><br>
+
+<p><%= @dog.name %> is a <strong><%= @dog.breed %></strong> doge,</p>
+<p>     Age seems to be <strong><%= @dog.age %></strong></p>
+
+<br><br>
+
+<h2>My Employee Slav- I mean Owners :) <3</h2>
+<% @dog.employees.each do |e| %>
+<p><%= link_to e.full_title, employee_path(e) %></p>
+<% end %>

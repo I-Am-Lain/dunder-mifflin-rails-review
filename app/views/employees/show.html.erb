@@ -1,0 +1,15 @@
+<h1><%=@emp.name%>!!</h1>
+<img src="<%= @emp.img_url %>" 
+title="<%= @emp.name %>'s questionable photo" 
+alt="<%= @emp.name %>'s questionable photo">
+
+<br><br>
+
+<p>The <b><%= @emp.title %></b>,</p>
+<p>they are known as <b><%= @emp.alias %></b></p>
+<p>of their office, <b><%= @emp.office %></b>.</p>
+
+<br><br>
+
+<h2>My PUPPY WUPPERS <3</h2>
+<p><%= link_to @emp.dog.full_title, dog_path(@emp.dog) %></p>

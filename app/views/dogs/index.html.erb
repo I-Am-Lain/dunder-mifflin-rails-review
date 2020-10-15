@@ -1,0 +1,7 @@
+<h1>WELCOME MY DAWGS</h1>
+
+<p>Dogs near the top have less owners :'(</p>
+<% @dogs.sort_by {|d| d.employees.count }.each do |d| %>
+    <%= link_to d.name, dog_path(d) %>
+    <br><br>
+<% end %>

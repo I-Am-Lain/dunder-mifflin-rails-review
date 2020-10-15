@@ -1,0 +1,46 @@
+<h1>WELCOME TO CREATE-AN-EMPLOYEE!</h1>
+
+
+<% if @emp.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@emp.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+
+    <ul>
+    <% @emp.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+<%= form_for @emp do |e| %>
+    <%= e.label :first_name %>
+    <%= e.text_field :first_name %><br>
+
+    <%= e.label :last_name %>
+    <%= e.text_field :last_name %><br>
+
+    <%= e.label :alias %>
+    <%= e.text_field :alias %><br>
+
+    <%= e.label :title %>
+    <%= e.text_field :title %><br>
+
+    <%= e.label :office %>
+    <%= e.text_field :office %><br>
+
+    <%= e.label :img_url %>
+    <%= e.text_field :img_url %><br>
+
+    <%= e.label :dog_id %>
+    <%= e.collection_select :dog_id, @dogs, :id, :name %>
+    
+
+    <br><br>
+    <%= e.submit %>
+<% end %>
